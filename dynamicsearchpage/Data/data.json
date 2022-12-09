@@ -1,0 +1,481 @@
+{
+    "total": 13,
+    "results": [
+    {
+        "id": "93821917969",
+        "createdAt": "2022-12-02T03:00:17.823Z",
+        "updatedAt": "2022-12-08T03:30:19.758Z",
+        "publishedAt": "2022-12-08T05:40:13.034Z",
+        "isEdited": false,
+        "language": null,
+        "translatedFromId": null,
+        "values": {
+        "merchant_website_link": "https://parkaccess.com.ph",
+        "merchant_logo": {
+            "url": "https://www.maya.ph/hubfs/Pay-in-4/merchants/swoosh-logo-black.jpeg",
+            "width": 1600,
+            "height": 1600,
+            "altText": "",
+            "type": "image"
+        },
+        "merchant_name": "Nike ",
+        "category": [
+            {
+            "id": "1",
+            "name": "Retail",
+            "label": "Retail",
+            "labelTranslations": null,
+            "type": "option",
+            "order": 0
+            }
+        ],
+        "status": 1
+        },
+        "publishStatus": "PUBLISHED",
+        "path": null,
+        "name": null,
+        "childTableId": "0",
+        "isSoftEditable": false
+    },
+    {
+    "id": "93821917975",
+    "createdAt": "2022-12-02T03:00:17.823Z",
+    "updatedAt": "2022-12-08T03:30:23.471Z",
+    "publishedAt": "2022-12-08T05:40:13.034Z",
+    "isEdited": false,
+    "language": null,
+    "translatedFromId": null,
+    "values": {
+    "merchant_website_link": "https://wearvamos.com/",
+    "merchant_logo": {
+    "url": "https://www.maya.ph/hubfs/Pay-in-4/merchants/Vamos_Horizontal_460x.png",
+    "width": 460,
+    "height": 119,
+    "altText": "",
+    "type": "image"
+    },
+    "merchant_name": "Vamos",
+    "category": [
+    {
+    "id": "1",
+    "name": "Retail",
+    "label": "Retail",
+    "labelTranslations": null,
+    "type": "option",
+    "order": 0
+    }
+    ],
+    "status": 1
+    },
+    "publishStatus": "PUBLISHED",
+    "path": null,
+    "name": null,
+    "childTableId": "0",
+    "isSoftEditable": false
+    },
+    {
+    "id": "93821917976",
+    "createdAt": "2022-12-02T03:00:17.823Z",
+    "updatedAt": "2022-12-08T05:31:29.474Z",
+    "publishedAt": "2022-12-08T05:40:13.034Z",
+    "isEdited": false,
+    "language": null,
+    "translatedFromId": null,
+    "values": {
+    "merchant_website_link": "#",
+    "merchant_logo": {
+    "url": "https://www.maya.ph/hubfs/MVP%20Merchant%20Logos/dc.png",
+    "width": 400,
+    "height": 400,
+    "altText": "",
+    "type": "image"
+    },
+    "merchant_name": "DC",
+    "category": [
+    {
+    "id": "1",
+    "name": "Retail",
+    "label": "Retail",
+    "labelTranslations": null,
+    "type": "option",
+    "order": 0
+    }
+    ],
+    "status": 1
+    },
+    "publishStatus": "PUBLISHED",
+    "path": null,
+    "name": null,
+    "childTableId": "0",
+    "isSoftEditable": false
+    },
+    {
+    "id": "93821917977",
+    "createdAt": "2022-12-02T03:00:17.823Z",
+    "updatedAt": "2022-12-08T05:39:59.699Z",
+    "publishedAt": "2022-12-08T05:40:13.034Z",
+    "isEdited": false,
+    "language": null,
+    "translatedFromId": null,
+    "values": {
+    "merchant_website_link": "#",
+    "merchant_logo": {
+    "url": "https://www.maya.ph/hubfs/MVP%20Merchant%20Logos/columbia.png",
+    "width": 400,
+    "height": 400,
+    "altText": "",
+    "type": "image"
+    },
+    "merchant_name": "Columbia",
+    "category": [
+    {
+    "id": "1",
+    "name": "Retail",
+    "label": "Retail",
+    "labelTranslations": null,
+    "type": "option",
+    "order": 0
+    },
+    {
+    "id": "2",
+    "name": "Beauty",
+    "label": "Beauty",
+    "labelTranslations": null,
+    "type": "option",
+    "order": 1
+    }
+    ],
+    "status": 1
+    },
+    "publishStatus": "PUBLISHED",
+    "path": null,
+    "name": null,
+    "childTableId": "0",
+    "isSoftEditable": false
+    },
+    {
+    "id": "94534052270",
+    "createdAt": "2022-12-02T03:00:17.823Z",
+    "updatedAt": "2022-12-08T05:39:56.179Z",
+    "publishedAt": "2022-12-08T05:40:13.034Z",
+    "isEdited": false,
+    "language": null,
+    "translatedFromId": null,
+    "values": {
+    "merchant_website_link": "#",
+    "merchant_logo": {
+    "url": "https://www.maya.ph/hubfs/MVP%20Merchant%20Logos/native.png",
+    "width": 400,
+    "height": 400,
+    "altText": "",
+    "type": "image"
+    },
+    "merchant_name": "Native",
+    "category": [
+    {
+    "id": "2",
+    "name": "Beauty",
+    "label": "Beauty",
+    "labelTranslations": null,
+    "type": "option",
+    "order": 1
+    }
+    ],
+    "status": 1
+    },
+    "publishStatus": "PUBLISHED",
+    "path": null,
+    "name": null,
+    "childTableId": "0",
+    "isSoftEditable": false
+    },
+    {
+    "id": "94546502914",
+    "createdAt": "2022-12-02T03:00:17.823Z",
+    "updatedAt": "2022-12-08T05:30:59.188Z",
+    "publishedAt": "2022-12-08T05:40:13.034Z",
+    "isEdited": false,
+    "language": null,
+    "translatedFromId": null,
+    "values": {
+    "merchant_website_link": "#",
+    "merchant_logo": {
+    "url": "https://www.maya.ph/hubfs/MVP%20Merchant%20Logos/birkenstock.png",
+    "width": 400,
+    "height": 400,
+    "altText": "",
+    "type": "image"
+    },
+    "merchant_name": "Birken Stock",
+    "category": [
+    {
+    "id": "2",
+    "name": "Beauty",
+    "label": "Beauty",
+    "labelTranslations": null,
+    "type": "option",
+    "order": 1
+    }
+    ],
+    "status": 1
+    },
+    "publishStatus": "PUBLISHED",
+    "path": null,
+    "name": null,
+    "childTableId": "0",
+    "isSoftEditable": false
+    },
+    {
+    "id": "94546502915",
+    "createdAt": "2022-12-08T05:30:16.694Z",
+    "updatedAt": "2022-12-08T05:39:53.116Z",
+    "publishedAt": "2022-12-08T05:40:13.034Z",
+    "isEdited": false,
+    "language": null,
+    "translatedFromId": null,
+    "values": {
+    "merchant_website_link": "#",
+    "merchant_logo": {
+    "url": "https://www.maya.ph/hubfs/MVP%20Merchant%20Logos/delseyparis.png",
+    "width": 400,
+    "height": 400,
+    "altText": "",
+    "type": "image"
+    },
+    "merchant_name": "Delsey",
+    "category": [
+    {
+    "id": "2",
+    "name": "Beauty",
+    "label": "Beauty",
+    "labelTranslations": null,
+    "type": "option",
+    "order": 1
+    }
+    ],
+    "status": 1
+    },
+    "publishStatus": "PUBLISHED",
+    "path": null,
+    "name": null,
+    "childTableId": "0",
+    "isSoftEditable": false
+    },
+    {
+    "id": "94534052273",
+    "createdAt": "2022-12-08T05:32:57.363Z",
+    "updatedAt": "2022-12-08T05:39:49.046Z",
+    "publishedAt": "2022-12-08T05:40:13.034Z",
+    "isEdited": false,
+    "language": null,
+    "translatedFromId": null,
+    "values": {
+    "merchant_website_link": "#",
+    "merchant_logo": {
+    "url": "https://www.maya.ph/hubfs/MVP%20Merchant%20Logos/fox.png",
+    "width": 400,
+    "height": 400,
+    "altText": "",
+    "type": "image"
+    },
+    "merchant_name": "Fox",
+    "category": [
+    {
+    "id": "3",
+    "name": "Travel",
+    "label": "Travel",
+    "labelTranslations": null,
+    "type": "option",
+    "order": 2
+    }
+    ],
+    "status": 1
+    },
+    "publishStatus": "PUBLISHED",
+    "path": null,
+    "name": null,
+    "childTableId": "0",
+    "isSoftEditable": false
+    },
+    {
+    "id": "94534052274",
+    "createdAt": "2022-12-08T05:34:15.272Z",
+    "updatedAt": "2022-12-08T05:39:45.619Z",
+    "publishedAt": "2022-12-08T05:40:13.034Z",
+    "isEdited": false,
+    "language": null,
+    "translatedFromId": null,
+    "values": {
+    "merchant_website_link": "#",
+    "merchant_logo": {
+    "url": "https://www.maya.ph/hubfs/MVP%20Merchant%20Logos/thetravelclub.png",
+    "width": 400,
+    "height": 400,
+    "altText": "",
+    "type": "image"
+    },
+    "merchant_name": "The Travel Club",
+    "category": [
+    {
+    "id": "3",
+    "name": "Travel",
+    "label": "Travel",
+    "labelTranslations": null,
+    "type": "option",
+    "order": 2
+    }
+    ],
+    "status": 1
+    },
+    "publishStatus": "PUBLISHED",
+    "path": null,
+    "name": null,
+    "childTableId": "0",
+    "isSoftEditable": false
+    },
+    {
+    "id": "94534052275",
+    "createdAt": "2022-12-08T05:34:59.934Z",
+    "updatedAt": "2022-12-08T05:39:36.064Z",
+    "publishedAt": "2022-12-08T05:40:13.034Z",
+    "isEdited": false,
+    "language": null,
+    "translatedFromId": null,
+    "values": {
+    "merchant_website_link": "#",
+    "merchant_logo": {
+    "url": "https://www.maya.ph/hubfs/Business%20Types%20Enterprise/Business%20Travel/Partner%20Logo/Traveloka_Primary_Logo.png",
+    "width": 675,
+    "height": 297,
+    "altText": "",
+    "type": "image"
+    },
+    "merchant_name": "Travelon",
+    "category": [
+    {
+    "id": "3",
+    "name": "Travel",
+    "label": "Travel",
+    "labelTranslations": null,
+    "type": "option",
+    "order": 2
+    }
+    ],
+    "status": 1
+    },
+    "publishStatus": "PUBLISHED",
+    "path": null,
+    "name": null,
+    "childTableId": "0",
+    "isSoftEditable": false
+    },
+    {
+    "id": "94546502917",
+    "createdAt": "2022-12-08T05:37:18.484Z",
+    "updatedAt": "2022-12-08T05:39:32.631Z",
+    "publishedAt": "2022-12-08T05:40:13.034Z",
+    "isEdited": false,
+    "language": null,
+    "translatedFromId": null,
+    "values": {
+    "merchant_website_link": "#",
+    "merchant_logo": {
+    "url": "https://www.maya.ph/hubfs/MVP%20Merchant%20Logos/hedgren.png",
+    "width": 400,
+    "height": 400,
+    "altText": "",
+    "type": "image"
+    },
+    "merchant_name": "Hedgren",
+    "category": [
+    {
+    "id": "1",
+    "name": "Retail",
+    "label": "Retail",
+    "labelTranslations": null,
+    "type": "option",
+    "order": 0
+    }
+    ],
+    "status": 1
+    },
+    "publishStatus": "PUBLISHED",
+    "path": null,
+    "name": null,
+    "childTableId": "0",
+    "isSoftEditable": false
+    },
+    {
+    "id": "94534052276",
+    "createdAt": "2022-12-08T05:37:50.012Z",
+    "updatedAt": "2022-12-08T05:39:29.491Z",
+    "publishedAt": "2022-12-08T05:40:13.034Z",
+    "isEdited": false,
+    "language": null,
+    "translatedFromId": null,
+    "values": {
+    "merchant_website_link": "#",
+    "merchant_logo": {
+    "url": "https://www.maya.ph/hubfs/MVP%20Merchant%20Logos/tumi.png",
+    "width": 400,
+    "height": 400,
+    "altText": "",
+    "type": "image"
+    },
+    "merchant_name": "Tumi",
+    "category": [
+    {
+    "id": "2",
+    "name": "Beauty",
+    "label": "Beauty",
+    "labelTranslations": null,
+    "type": "option",
+    "order": 1
+    }
+    ],
+    "status": 1
+    },
+    "publishStatus": "PUBLISHED",
+    "path": null,
+    "name": null,
+    "childTableId": "0",
+    "isSoftEditable": false
+    },
+    {
+    "id": "94534052277",
+    "createdAt": "2022-12-08T05:38:38.596Z",
+    "updatedAt": "2022-12-08T05:39:23.566Z",
+    "publishedAt": "2022-12-08T05:40:13.034Z",
+    "isEdited": false,
+    "language": null,
+    "translatedFromId": null,
+    "values": {
+    "merchant_website_link": "#",
+    "merchant_logo": {
+    "url": "https://www.maya.ph/hubfs/HYDROFLASK.png",
+    "width": 4446,
+    "height": 1334,
+    "altText": "",
+    "type": "image"
+    },
+    "merchant_name": "Hydo Flask",
+    "category": [
+    {
+    "id": "3",
+    "name": "Travel",
+    "label": "Travel",
+    "labelTranslations": null,
+    "type": "option",
+    "order": 2
+    }
+    ],
+    "status": 1
+    },
+    "publishStatus": "PUBLISHED",
+    "path": null,
+    "name": null,
+    "childTableId": "0",
+    "isSoftEditable": false
+    }
+    ]
+    }

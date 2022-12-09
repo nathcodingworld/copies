@@ -1,0 +1,32 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+.containers {
+    margin: auto;
+    margin-top: 80px;
+    width: 2000px;
+}
+
+.crd-con {
+    margin-bottom: 25px;
+}
+.card-header {
+    background-color: #73bf44;
+    color: white;
+}
+
+.review{
+    background-color: rgba(0, 0, 0, 0.13);
+    color: black;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: row;
+}
+
+.detail {
+    margin-left: 40px;
+}
+#rev-sub{
+    margin-bottom: 70px;
+}

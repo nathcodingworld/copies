@@ -1,0 +1,171 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components | Sider Inputs</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</head>
+
+<style>
+    .slider {
+        height: 6px;
+        background-color: #fc5f2c;
+        width: 100%;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: pointer;
+        border-radius: 3px;
+        height: 8px;
+    }
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 50px;
+        height: 25px;
+        background: white;
+        border: 5px #fc5f2c solid;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .end {
+        text-align: end;
+    }
+    .center {
+        text-align: center;
+    }
+    .explode {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .ints, .rept {
+        width: 80px;
+    }
+    .bgs {
+        background-color: #edf1ff;
+        width: 700px;
+        margin: auto;
+        margin-top: 100px;
+    }
+    .inp {
+        margin: 15px 0;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.199);
+    }
+    .splb {
+        margin-top: 10px;
+    }
+    .spval {
+        margin-bottom: 15px;
+    }
+    .form-label {
+        font-size: 24px;
+    }
+</style>
+<body>
+    <div class="card bgs">
+        <div class="card-header center">
+            <h1>Input Sliders</h1>
+        </div>
+        <div class="card-body">
+            <form action="#">
+                <div class="inp">
+                    <label for="ordervalue" class="form-label" >Order Value</label>
+                    <h4 id="ordervalab" class="spval">Php 21000</h4>
+                    <input type="range" class="slider" min="2000" max="40000" step="500" id="ordervalue">
+                    <div class="row splb">
+                        <span class="col">php 2000</span>
+                        <span class="col end">php 40000</span>
+                    </div>
+                </div>
+                <div class="inp">
+                    <label for="downp" class="form-label" >Down Payment</label>
+                    <h4 id="dpval" class="spval">Php 8000</h4>
+                    <input type="range" class="slider" min="0" max="16000" step="500" id="downp">
+                    <div class="row splb">
+                        <span class="col">php 0</span>
+                        <span class="col end" id="maxdp">php 16000</span>
+                    </div>
+                </div>
+            </form>
+            <h3 class="center">Installments</h3>
+            <div class="explode">
+                <button data-mr="110" data-i="28" data-int="2" class="btn ints btn-outline-primary active">2</button>
+                <button data-mr="200" data-i="48" data-int="4" class="btn ints btn-outline-primary">4</button>
+                <button data-mr="268" data-i="68" data-int="6" class="btn ints btn-outline-primary">6</button>
+                <button data-mr="110" data-i="28" data-int="28" disabled class="btn ints btn-outline-primary">12</button>
+                <button data-mr="110" data-i="28" data-int="28" disabled class="btn ints btn-outline-primary">24</button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="card center">
+                <div class="card-header">
+                    <h3>Installments Amount</h3>
+                </div>
+                <div class="card-body">
+                    <h1 id="instam"></h1>
+                    <p id="insmsg"></p>
+                    <button class="btn btn-primary">Apply Now</button>
+                </div>
+            </div>
+        </div>
+      </div>
+</body>
+<script>
+    let minrate = 110
+    let irate = 28
+    let intallm = 2
+    let amount = 0
+    let ostep = 38
+    let dpstep = 16
+    let oval = 21000
+    let dpval = 8000
+    const btns = document.querySelectorAll(".ints")
+    document.getElementById("ordervalue").addEventListener("input", (e)=> {
+        oval = +e.target.value
+        ostep = (oval / 500) - 4
+        const dp = Math.round((oval * .75) / 500) * 500
+        document.getElementById("ordervalab").innerText = "Php "+oval
+        document.getElementById("downp").setAttribute("max", dp)
+        document.getElementById("maxdp").innerText = "php "+ dp
+        if(dpval > dp) {
+            document.getElementById("dpval").innerText = "Php "+ dp
+            dpval = dp
+            dpstep = dp / 500
+        }
+        updateAmount()
+    })
+    document.getElementById("downp").addEventListener("input", (e)=> {
+        dpval = e.target.value
+        dpstep = dpval /500
+        document.getElementById("dpval").innerText = "Php "+ dpval
+        updateAmount()
+
+    })
+    btns.forEach(el=>{
+        el.addEventListener("click", (e)=> {
+            btns.forEach(btn=> btn.classList.remove("active"))
+            el.classList.add("active")
+            intallm = +e.target.dataset.int
+            minrate = +e.target.dataset.mr
+            irate = +e.target.dataset.i
+            updateAmount()
+        })
+    })
+    function updateAmount() {
+        amount = minrate + (ostep * irate)
+            amount = amount - (dpstep * irate)
+            amount += oval - dpval
+            amount = amount / intallm
+            document.getElementById("instam").innerText = "PHP "+ Math.round(amount)
+            const msg = intallm == 2 ? "twice a month for 1 month": intallm == 4 ? "twice a month for 2 months" : "twice a month for 3 months"
+            document.getElementById("insmsg").innerText = msg
+    }
+    updateAmount()
+</script>
+</html>

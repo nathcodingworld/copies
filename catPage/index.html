@@ -1,0 +1,304 @@
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashalo L Partners store</title>
+</head>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <style>
+        section {
+            max-width: 1200px;
+            margin: auto;
+        }
+        .head {
+            padding: 35px;
+            background: linear-gradient(180deg, #1B52A2 0%, #3290E7 120%);
+            border-radius: 10px;
+            margin-top: 100px;
+        }
+        .body {
+            margin-top: 20px;
+            margin-top: 80px;
+        }
+        .foot {
+            margin-top: 20px;
+        }
+        #buttons button,
+        .content ul li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            border: none;
+            margin-top: 25px;
+            width: 100%;
+            background: none;
+        }
+        .content ul li {
+            margin-top: 0;
+        }
+        .content ul li  i {
+            color: #1B52A2;
+        }
+        #buttons button:hover {
+            background: #F4FAFF;
+            border-radius: 10px;
+        }
+        .active {
+            background: #1B52A2 !important;
+            color: white;
+
+        }
+        #buttons p,
+        .content ul li p {
+            padding: 0;
+            margin:0;
+        }
+        .content ul li::marker {
+            content: none;
+        }
+        .nodata {
+            margin-left: 20px;
+            color: #1B52A2;
+        }
+    </style>       
+</head>
+
+
+<body>
+    <section>
+        <div class="row head">
+            <div class="col-9">
+                <input type="text" class="form-control" id="search" placeholder="Search">
+            </div>
+            <div class="col-3">
+                <select id="filter" class="form-select" aria-label="Default select example">
+                    <option selected value>Province</option>
+                    <option value="Manila">Manila</option>
+                    <option value="Batangas">Batangas</option>
+                    <option value="Laguna">Laguna</option>
+                    <option value="Laguna">Malabon</option>
+                </select>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="row body">
+            <div class="col-3 filter">
+                <h3>Category</h3>
+                <div id="buttons">
+                    <button type="button" data-param="EA">
+                        <i class="bi bi-tv"></i>
+                        <p>Electice & Appliances</p>
+                    </button>
+            
+                    <button type="button" data-param="DS">
+                        <i class="bi bi-tv"></i>
+                        <p>Department Store</p>
+                    </button>
+            
+                    <button type="button" data-param="DIY">
+                        <i class="bi bi-tv"></i>
+                        <p>DIY Store</p>
+                    </button>
+            
+                    <button type="button" data-param="FB">
+                        <i class="bi bi-tv"></i>
+                        <p>Fashion & Beauty</p>
+                    </button>
+            
+                    <button type="button" data-param="GM">
+                        <i class="bi bi-tv"></i>
+                        <p>General Merchandise</p>
+                    </button>
+            
+                    <button type="button" data-param="HM">
+                        <i class="bi bi-tv"></i>
+                        <p>Hypermart</p>
+                    </button>
+            
+                    <button type="button" data-param="MG">
+                        <i class="bi bi-tv"></i>
+                        <p>Mobile & Gadgets</p>
+                    </button>
+            
+                    <button type="button" data-param="MAA">
+                        <i class="bi bi-tv"></i>
+                        <p>Moto & Auto Accesories</p>
+                    </button>
+            
+                    <button type="button" data-param="SA">
+                        <i class="bi bi-tv"></i>
+                        <p>Sports Apparel</p>
+                    </button>
+            
+                    <button type="button" data-param="TY">
+                        <i class="bi bi-tv"></i>
+                        <p>Toys</p>
+                    </button>
+                </div>
+            </div>
+            <div class="col-9 content">
+                <ul> </ul>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="row foot">
+            <div class="col-3"></div>
+           <div class="col-9">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination"> </ul>
+              </nav>
+           </div>
+        </div>
+    </section>
+</body>
+
+
+<foot>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        (async ()=> {
+            try {
+                const res = await fetch("Data.json")
+                if(!res.ok) throw Error("fecth failed")
+                const {RECORDS} = await res.json()
+                if(RECORDS)  filler(RECORDS)
+            } catch (error) {
+                console.log(error.message);
+            }
+        })()
+        let searchHolder = null
+        let filterHolder = null
+        function filler(RECORDS) {
+            const btns = document.querySelectorAll("#buttons button")
+            btns.forEach(btn=> {
+                btn.addEventListener("click", ()=> {
+                    const data = RECORDS[btn.dataset.param]
+                    filtering(data)
+                    searching(data)
+                    paginate(data, 15)
+                    btns.forEach(bt=> bt.classList.remove("active"))
+                    btn.classList.add("active")
+                })
+            })
+            btns[0].click()
+        }
+        function paginate(data, limit) {
+            let buttons = []
+            const perpage = Math.ceil(data.length / limit)
+            const pagination = document.querySelector(".pagination")
+            pagination.innerHTML = ""
+            for(let i =  1; i <= perpage; i++ ) {
+                const [li, btn] = _createLiButton()
+                btn.innerHTML = i
+                btn.addEventListener("click", ()=> {
+                    view(data, (i-1)*limit, limit*i)
+                })
+                li.append(btn)
+                if(perpage > 1 && perpage <= 12) {
+                    pagination.append(li)
+                } 
+                if(perpage > 12) buttons.push(li)
+                else buttons = []
+                
+            }
+            if(buttons.length !== 0) minimizePaginate(buttons, 12)
+            view(data, 0, 15)
+        }
+
+        function filtering(data) {
+            const filter = document.getElementById("filter")
+            filter.selectedIndex = 0
+            if(filterHolder) filter.removeEventListener("change", filterHolder)
+            filterHolder = filtera
+            filter.addEventListener("change", filterHolder)
+            function filtera(e) {
+                const result = data.filter(dt=> dt.toLowerCase().includes(e.target.value.toLowerCase()))
+                searching(result)
+                paginate(result, 15)
+            }
+        }
+
+        function searching(data) {
+            const search = document.getElementById("search")
+            search.value = ""
+            if(searchHolder) search.removeEventListener("input", searchHolder)
+            searchHolder = searcha
+            search.addEventListener("input", searchHolder)
+            function searcha(e) {
+                const result = data.filter(dt=> dt.toLowerCase().includes(e.target.value.toLowerCase()))
+                paginate(result, 15)
+            }
+        }
+        function view(data, start, end) {
+            const list = document.querySelector(".content ul")
+            list.innerHTML = ""
+            const last = Math.min(data.length , end)
+            const child = data.slice(start, last)
+            if(child.length > 0) {
+                child.forEach(dt => {
+                    const item = document.createElement("li")
+                    item.innerHTML = `<i class="bi bi-check-circle-fill"></i> <p>${dt}</p>`
+                    list.append(item)
+                })
+            } else {
+                list.innerHTML = "<h3 class='nodata'>No Data Found</h3>"
+            }
+        }
+
+        //addition for minimize pagination
+        function minimizePaginate(btns, limit) {
+            const [liprev, btnprev] = _createLiButton("<span aria-hidden='true'>&laquo;</span>")
+            const [linext, btnnext] = _createLiButton('<span aria-hidden="true">&raquo;</span>')
+            const perbutton = Math.ceil(btns.length / limit)
+            let curr = 1
+            const pagination = document.querySelector(".pagination")
+                pagination.innerHTML = ""
+            btnprev.addEventListener("click", ()=> {
+                if(curr > 1) curr--        
+                _appendListButtonHelper(btns, (curr-1)*limit, limit*curr , {prev: [liprev, btnprev], next: [linext, btnnext]})
+            })
+            btnnext.addEventListener("click", ()=> {
+                if(curr < perbutton) curr++
+                _appendListButtonHelper(btns, (curr-1)*limit, limit*curr , {prev: [liprev, btnprev], next: [linext, btnnext]})
+                
+            })
+            _appendListButtonHelper(btns, curr-1, limit, {prev: [liprev, btnprev], next: [linext, btnnext]})
+        } 
+       
+        function _createLiButton(innerHTML) {
+            const li = document.createElement("li")
+            const btn = document.createElement("button")
+            li.setAttribute("class", "page-item" )
+            btn.setAttribute("class", "page-link")
+            if(innerHTML) btn.innerHTML = innerHTML
+            return [li, btn]
+        }
+        function _appendListButtonHelper(data, start, end, childs) {
+            const pagination = document.querySelector(".pagination")
+            pagination.innerHTML = ""
+            const last = Math.min(data.length ,end)
+            const currbtns = data.slice( start, last)
+            currbtns.forEach(bt => {
+                pagination.append(bt)
+            })
+            const [linext, btnnext] = childs.next
+            const [liprev, btnprev] = childs.prev
+            linext.append(btnnext)
+            liprev.append(btnprev)
+            pagination.append(linext)
+            pagination.prepend(liprev)
+        }
+    </script>
+</foot>
+
+
+</html>

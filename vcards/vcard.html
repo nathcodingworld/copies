@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Content that will not be print.</p>
+     </div>
+     
+     <div id="MyPrintDiv">
+         <p>
+              Here will be your content.
+         </p>
+     
+     </div>
+     
+     <button id="print">Print</button>
+     <script>
+          console.log("asdasd");
+   function MyPrintFunction()
+{
+	var windowContent = '<!DOCTYPE html>';
+	//Starting HTML Tags
+	windowContent += '<html>'
+	
+	//Setting Print Page Title
+    windowContent += '<head><title>Print Content</title>';
+	
+    //Adding Style
+    windowContent += '<style>p{ color: #f00; font-size:28px; font-weight:bold}</style>';
+        
+        
+    windowContent += '</head>';
+	
+	//Starting Body Tag
+	windowContent += '<body>'
+	
+	//Getting Div HTML
+	windowContent +=  document.getElementById("MyPrintDiv").innerHTML;
+	
+	//Closing Body Tag and HTML Tag
+
+	windowContent += '</html>';
+	
+	//Calling Print Window
+	var printWin = window.open('','','fullscreen=yes');
+	
+	//Opening Print Window
+	printWin.document.open();
+	
+	//Adding Content in Print Window
+	printWin.document.write(windowContent);
+	
+	//Closing Print Window
+	printWin.document.close();
+	
+	//Focusing User to Print Window
+	printWin.focus();
+	
+	//Calling Default Browser Printer
+	printWin.print();
+	
+	//Closing Print Window
+	printWin.close();
+}
+document.getElementById("print").addEventListener("click", ()=> {
+    MyPrintFunction()
+    console.log("asdasd");
+})
+     </script>
+</body>
+</html>

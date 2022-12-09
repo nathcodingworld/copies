@@ -1,0 +1,39 @@
+.container {
+    width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.searchinp {
+    grid-column: 1/5;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.filterinp {
+    grid-column: 2/2;
+}
+
+.cardinp {
+    grid-column: 2/5;
+}
+
+.buttoninp {
+    grid-column: 2/5;
+}
+.cardcontainer {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+}
+
+.cardloc,
+.carddate,
+.cardsal {
+    padding: 0;
+    margin: 6px 0;
+}

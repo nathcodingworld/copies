@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List tabs</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Flip.min.js"></script>
+</head>
+<style>
+    .wraper {
+        max-width: 1200px;
+        margin: 100px auto;
+        padding: 0 40px;
+    }
+    .list-wrap {
+        margin-top: 40px;
+    }
+    .list-group {
+        flex-direction: unset;
+    }
+    .tabnav {
+        text-align: center;
+        width: max-content;
+        margin-right: 40px;
+        text-decoration: none;
+        color: orange;
+    }
+    @media screen and (max-width: 500px) {
+        .tabnav {
+            width: 100%;
+        }
+        .wraper {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 0 15px;
+        }
+    }
+</style>
+<body>
+    <div class="wraper">
+        <div class="list-group row" id="list-tab" role="tablist">
+                <a class="tabnav active col-3" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">Home</a>
+                <a class="tabnav col-3" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">Profile</a>
+                <a class="tabnav col-3" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Messages</a>
+                <a class="tabnav col-3" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Settings</a>
+        </div>
+
+        <div class="tab-content list-wrap" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+            <img src="./media/aplyloan.jpg" class="rounded "   width="200" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+            <img src="./media/successfreelancer.jpg" class="rounded " width="200" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img src="./media/SRTva.jpg" class="rounded " width="200" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img src="./media/weddingmin.jpeg" class="rounded " width="200" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          </div>
+          <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">ssss</div>
+          <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">dddd</div>
+          <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">.adsda.</div>
+        </div>
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute;right: 0;"></button>
+                <img src="./media/aplyloan.jpg" class="rounded"  data-bs-toggle="modal" data-bs-target="#exampleModal" >
+              </div>
+            </div>
+          </div>
+
+    </div>
+</body>
+<script>
+    // var exampleModal = document.getElementById('exampleModal')
+    // exampleModal.addEventListener('show.bs.modal', function (event) {
+    // // Button that triggered the modal
+    // var button = event.relatedTarget
+    // // Extract info from data-bs-* attributes
+    // var recipient = button.getAttribute('data-bs-whatever')
+    // // If necessary, you could initiate an AJAX request here
+    // // and then do the updating in a callback.
+    // //
+    // // Update the modal's content.
+    // var modalTitle = exampleModal.querySelector('.modal-title')
+    // var modalBodyInput = exampleModal.querySelector('.modal-body input')
+
+    // modalTitle.textContent = 'New message to ' + recipient
+    // modalBodyInput.value = recipient
+    // })
+</script>
+
+</html>

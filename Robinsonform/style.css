@@ -1,0 +1,34 @@
+.container {
+  max-width: 1000px;
+  width: max-content;
+  margin: 100px auto;
+  border: 1px solid rgba(128, 128, 128, 0.445);
+  box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.425);
+  padding: 40px;
+}
+.formbtn {
+  margin-top: 10px;
+}
+
+#Root{
+  border-radius: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+
+#crud-table thead th, #crud-table thead td {
+  padding: 16px 8px;
+}
+
+#Root .crud-btn {
+  margin: 40px 0;
+}
+
+#crud-table tbody td:last-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}

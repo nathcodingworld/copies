@@ -1,0 +1,426 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maya | Dynamic Search Page</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</head>
+<style>
+    .headtitle {
+        margin: 100px auto;
+        width: max-content;
+    }
+    .headtitle h1 {
+        font-family: 'Cerebri Sans Pro';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 54px;
+        line-height: 64px;
+        /* identical to box height, or 119% */
+
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.5px;
+
+        /* Text / Brand / Electric Purple */
+
+        color: #432BA3;
+    }
+    .headtitle p {
+        font-family: 'Cerebri Sans Pro';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .merchcard {
+        height: 75px;
+        width: 150px;
+        overflow: hidden;
+        margin: auto;
+        box-shadow: 0px 11.5385px 23.0769px rgba(73, 40, 170, 0.05);
+        border-radius: 20px;
+    }
+    .merchcard a {
+        height: 100%;
+        width: 100%;
+    }
+    .merchcard a img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    .sbtn {
+        border: 1px solid #BDC6D1;
+        border-right: none;
+        border-radius: 18px;
+        color: #432BA3;
+        padding-left: 30px;
+    }
+    .sbtn svg {
+        transform: scale(1.5);
+
+    }
+    .sbtn {
+        background: none;
+        background-color: transparent;
+        pointer-events: none;
+    }
+    .sinp {
+        border-left: none;
+        border-radius: 18px;
+    }
+    .input-group {
+        max-width: 520px;
+        height: 65px; 
+    }
+    .wrapper {
+        max-width: 800px;
+        margin: auto;
+    }
+    .listcat {
+        padding: 20px; 
+        border: 1px solid #BDC6D1;
+        border-radius: 20px;
+    }
+    .listcat .list-group-item {
+        border: none;
+        font-family: 'Cerebri Sans Pro';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 28px;  
+        align-items: center;
+        
+        color: #404040;
+        border-radius: 4px;
+    }
+    .listcat .list-group-item.active {
+        background: rgba(226, 245, 227, 0.5) ;
+        color: #50B16B;
+    }
+    .cardwrapper {
+        margin-top: 30px;
+    }
+    .pagination {
+        justify-content: end;
+        gap: 20px;
+        margin-top: 50px;
+
+    }
+    .page-item:last-child .page-link,
+    .page-item:first-child .page-link {
+        border-radius: 10px;
+    }
+    .page-item button {
+        padding: 5px; 
+        width: 40px;
+        height: 40px; 
+        border: 1px solid #BDC6D1;
+        border-radius: 10px;
+
+        font-family: 'Cerebri Sans Pro';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 35px; 
+
+        color: #50B16B;
+
+    }
+    .page-link:hover {
+        z-index: 2;
+        color: #e9ecef ;
+        background-color: #50B16B;
+        border-color: #dee2e6;
+    }
+    .page-link:focus {
+        z-index: 3;
+        color: #e9ecef;
+        background-color: #50B16B;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem rgb(80 177 107 / 25%);
+    } 
+    .nodata {
+        margin-left: 20px;
+        color: #50B16B;
+    }
+ 
+</style>
+<body>
+    <div class="container">
+        <div class="headtitle">
+            <h1>Pay in 4 Partner Merchants</h1>
+            <p>Get to know all Maya’s partner merchants who offer Pay in 4 installments</p>
+        </div>
+        <div class="row">
+            <div class="col col-md-3">
+              <div class="list-group listcat mt-3"   id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-all-list" data-bs-toggle="list" href="#list-all" role="tab" aria-controls="list-all">
+                    <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_10401_44180)">
+                        <path d="M16.3971 5H7.78403C6.52454 5 5.5 6.02454 5.5 7.28403V15.8971C5.5 17.1566 6.52454 18.1812 7.78403 18.1812H16.3971C17.6566 18.1812 18.6812 17.1566 18.6812 15.8971V7.28403C18.681 6.02454 17.6566 5 16.3971 5Z" fill="#50B16B"/>
+                        <path d="M33.2174 5H24.6043C23.3449 5 22.3203 6.02454 22.3203 7.28403V15.8971C22.3203 17.1566 23.3449 18.1812 24.6043 18.1812H33.2174C34.4769 18.1812 35.5015 17.1566 35.5015 15.8971V7.28403C35.5015 6.02454 34.4769 5 33.2174 5Z" fill="#50B16B"/>
+                        <path d="M16.3971 21.8184H7.78403C6.52454 21.8184 5.5 22.8428 5.5 24.1023V32.7154C5.5 33.9749 6.52454 34.9994 7.78403 34.9994H16.3971C17.6566 34.9994 18.6812 33.9749 18.6812 32.7154V24.1023C18.681 22.8428 17.6566 21.8184 16.3971 21.8184Z" fill="#50B16B"/>
+                        <path d="M33.2174 21.8184H24.6043C23.3449 21.8184 22.3203 22.8429 22.3203 24.1024V32.7155C22.3203 33.975 23.3449 34.9995 24.6043 34.9995H33.2174C34.4769 34.9994 35.5015 33.9749 35.5015 32.7154V24.1023C35.5015 22.8428 34.4769 21.8184 33.2174 21.8184Z" fill="#50B16B"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_10401_44180">
+                        <rect width="30" height="30" fill="white" transform="translate(5.5 5)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span>All</span>
+                </a>
+                <a class="list-group-item list-group-item-action" id="list-retail-list" data-bs-toggle="list" href="#list-retail" role="tab" aria-controls="list-retail">
+                    <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M33.0469 12.0991C32.7428 11.7373 32.3636 11.446 31.9356 11.2454C31.5076 11.0448 31.0411 10.9398 30.5685 10.9375H27.6591V16.4063C27.6591 16.6963 27.5439 16.9745 27.3388 17.1796C27.1336 17.3848 26.8554 17.5 26.5654 17.5C26.2753 17.5 25.9971 17.3848 25.792 17.1796C25.5868 16.9745 25.4716 16.6963 25.4716 16.4063V10.9375H14.5341V16.4063C14.5341 16.6963 14.4189 16.9745 14.2138 17.1796C14.0086 17.3848 13.7304 17.5 13.4404 17.5C13.1503 17.5 12.8721 17.3848 12.667 17.1796C12.4618 16.9745 12.3466 16.6963 12.3466 16.4063V10.9375H9.43724C8.96469 10.9429 8.49876 11.0493 8.07079 11.2498C7.64281 11.4502 7.26269 11.7399 6.95599 12.0994C6.6493 12.459 6.42312 12.88 6.29268 13.3342C6.16224 13.7884 6.13055 14.2653 6.19974 14.7328L8.6388 30.2094C8.79635 31.2411 9.31923 32.1819 10.1122 32.8604C10.9052 33.5389 11.9155 33.9101 12.9591 33.9063H27.0466C28.0903 33.9101 29.1006 33.5389 29.8935 32.8604C30.6865 32.1819 31.2094 31.2411 31.3669 30.2094L33.806 14.7328C33.8774 14.265 33.8465 13.7873 33.7155 13.3326C33.5844 12.8779 33.3563 12.4571 33.0469 12.0991Z" fill="#50B16B"/>
+                        <path d="M14.5312 8.75C14.5312 7.2996 15.1074 5.9086 16.133 4.88301C17.1586 3.85742 18.5496 3.28125 20 3.28125C21.4504 3.28125 22.8414 3.85742 23.867 4.88301C24.8926 5.9086 25.4688 7.2996 25.4688 8.75V10.9375H27.6562V8.75C27.6562 6.71944 26.8496 4.77204 25.4138 3.33621C23.978 1.90039 22.0306 1.09375 20 1.09375C17.9694 1.09375 16.022 1.90039 14.5862 3.33621C13.1504 4.77204 12.3438 6.71944 12.3438 8.75V10.9375H14.5312V8.75Z" fill="#50B16B"/>
+                    </svg>
+                    <span>Retail</span>
+                </a>
+                <a class="list-group-item list-group-item-action" id="list-beauty-list" data-bs-toggle="list" href="#list-beauty" role="tab" aria-controls="list-beauty">
+                    <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_10401_78577)">
+                        <path d="M27.4004 31.0957H5.52539C4.9591 31.0957 4.5 31.5548 4.5 32.1211C4.5 33.82 5.87724 35.1973 7.57617 35.1973H25.3496C27.0485 35.1973 28.4258 33.82 28.4258 32.1211C28.4258 31.5548 27.9667 31.0957 27.4004 31.0957Z" fill="#50B16B"/>
+                        <path d="M38.9925 7.56441C35.0177 5.21551 30.9866 5.21551 27.0117 7.56441C26.5373 7.84475 26.3693 8.45 26.6313 8.93481L29.7441 14.6927H36.2602L39.3729 8.93481C39.6349 8.45 39.4669 7.84475 38.9925 7.56441Z" fill="#50B16B"/>
+                        <path d="M30.4453 16.7402H35.5723V19.8164H30.4453V16.7402Z" fill="#50B16B"/>
+                        <path d="M30.4453 32.6338C30.4453 34.0496 31.593 35.1973 33.0088 35.1973C34.4246 35.1973 35.5723 34.0496 35.5723 32.6338V21.8672H30.4453V32.6338Z" fill="#50B16B"/>
+                        <path d="M22.0217 13.574C20.5369 12.0892 18.5628 11.2715 16.4629 11.2715C14.363 11.2715 12.3889 12.0892 10.9041 13.574C9.41928 15.0588 8.60156 17.0329 8.60156 19.1328C8.60156 21.2327 9.41928 23.2068 10.9041 24.6916C12.3889 26.1764 14.363 26.9941 16.4629 26.9941C18.5628 26.9941 20.5369 26.1764 22.0217 24.6916C23.5065 23.2068 24.3242 21.2327 24.3242 19.1328C24.3242 17.0329 23.5065 15.0588 22.0217 13.574ZM12.5959 21.1249C12.3335 21.1249 12.0711 21.0249 11.8709 20.8246C11.4705 20.4241 11.4705 19.7749 11.8709 19.3745L16.7046 14.5408C17.105 14.1403 17.7543 14.1403 18.1547 14.5408C18.5552 14.9412 18.5552 15.5904 18.1547 15.9909L13.321 20.8246C13.1207 21.0249 12.8584 21.1249 12.5959 21.1249ZM21.0549 18.8911L16.2212 23.7248C16.021 23.925 15.7586 24.0252 15.4962 24.0252C15.2339 24.0252 14.9714 23.9251 14.7712 23.7248C14.3708 23.3243 14.3708 22.6751 14.7712 22.2747L19.6049 17.441C20.0053 17.0405 20.6546 17.0405 21.055 17.441C21.4554 17.8414 21.4554 18.4906 21.0549 18.8911Z" fill="#50B16B"/>
+                        <path d="M16.4629 7.16992C9.86655 7.16992 4.5 12.5365 4.5 19.1328C4.5 23.2524 6.59323 26.8923 9.77188 29.0449H16.4629C10.9886 29.0449 6.55078 24.6071 6.55078 19.1328C6.55078 13.6585 10.9886 9.2207 16.4629 9.2207C21.9372 9.2207 26.375 13.6585 26.375 19.1328C26.375 24.6071 21.9372 29.0449 16.4629 29.0449H23.1539C26.3326 26.8923 28.4258 23.2524 28.4258 19.1328C28.4258 12.5365 23.0592 7.16992 16.4629 7.16992Z" fill="#50B16B"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_10401_78577">
+                        <rect width="35" height="35" fill="white" transform="translate(4.5 3)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span>Beauty</span>                        
+                </a>
+                <a class="list-group-item list-group-item-action" id="list-travel-list" data-bs-toggle="list" href="#list-travel" role="tab" aria-controls="list-travel">
+                    <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_10401_78596)">
+                        <path d="M9.03125 8.53125H14.3254V10.296H9.03125V8.53125Z" fill="#50B16B"/>
+                        <path d="M26.6797 8.53125H31.9738V10.296H26.6797V8.53125Z" fill="#50B16B"/>
+                        <path d="M20.5625 18.6875L23.9791 17.8051L24.4202 19.5134L21.0037 20.3958L20.5625 18.6875Z" fill="#50B16B"/>
+                        <path d="M8.94218 12.0605C7.04412 12.0605 5.5 13.6047 5.5 15.5027V29.7949C5.5 31.6929 7.04412 33.237 8.94218 33.237H10.7941V12.0605H8.94218Z" fill="#50B16B"/>
+                        <path d="M28.4449 12.0597H25.035L24.2078 8.33774C24.0023 7.4121 23.1963 6.76562 22.2481 6.76562H18.7592C17.811 6.76562 17.0051 7.4121 16.7996 8.33768L15.9724 12.0597H12.5625V33.2362H28.4449V12.0597ZM25.2541 15.6547L26.5788 20.7804L19.7444 22.5465L18.4199 17.4208L25.2541 15.6547ZM18.5221 8.72039C18.547 8.60851 18.6445 8.53033 18.7591 8.53033H22.2481C22.3627 8.53033 22.4602 8.60851 22.4851 8.72045L23.2273 12.0597H17.7801L18.5221 8.72039ZM17.2684 29.7068C15.6466 29.7068 14.3272 28.3874 14.3272 26.7656C14.3272 25.1439 15.6466 23.8244 17.2684 23.8244C18.8901 23.8244 20.2096 25.1439 20.2096 26.7656C20.2096 28.3874 18.8901 29.7068 17.2684 29.7068Z" fill="#50B16B"/>
+                        <path d="M17.2624 27.9428C17.9122 27.9428 18.4389 27.4161 18.4389 26.7663C18.4389 26.1166 17.9122 25.5898 17.2624 25.5898C16.6127 25.5898 16.0859 26.1166 16.0859 26.7663C16.0859 27.4161 16.6127 27.9428 17.2624 27.9428Z" fill="#50B16B"/>
+                        <path d="M32.0551 12.0605H30.2031V33.237H32.0551C33.9531 33.237 35.4972 31.6929 35.4972 29.7948V15.5027C35.4972 13.6047 33.9531 12.0605 32.0551 12.0605Z" fill="#50B16B"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_10401_78596">
+                        <rect width="30" height="30" fill="white" transform="translate(5.5 5)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span>Travel</span>
+                </a>
+              </div>
+            </div>
+            <div class="col col-md-9">
+              <div class="tab-content"  id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-all" role="tabpanel" aria-labelledby="list-all-list">
+                    <div class="wrapper">
+                        <div id="searchtab-merch"> </div>
+                        <div class="row" id="list-all-merch"> </div>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination" id="paginate-merch"> </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="list-retail" role="tabpanel" aria-labelledby="list-retail-list">
+                    <div class="wrapper">
+                        <div id="searchtab-retail"> </div>
+                        <div class="row" id="list-all-retail"> </div>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination" id="paginate-retail"> </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="list-beauty" role="tabpanel" aria-labelledby="list-beauty-list">
+                    <div class="wrapper">
+                        <div id="searchtab-beauty">  </div>
+                        <div class="row" id="list-all-beauty"> </div>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination" id="paginate-beauty"> </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="list-travel" role="tabpanel" aria-labelledby="list-travel-list">
+                    <div class="wrapper">
+                        <div id="searchtab-travel">  </div>
+                        <div class="row" id="list-all-travel"> </div>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination" id="paginate-travel"> </ul>
+                        </nav>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</body>
+<script>
+
+    
+    var maxCardLimit, maxPaginatebtn
+    
+    (async () => { 
+            maxCardLimit = 4
+            maxPaginatebtn = 10
+            const res = await fetch('./Data/data.json')
+            if(!res.ok) throw Error("fetch failed")
+            const data = await res.json()  
+            createListTab('merch' , data)
+            createListTab('retail' , data)
+            createListTab('beauty' , data)
+            createListTab('travel' , data) 
+    })()
+    function createListTab (section , data ) {
+        const parent = 'list-all-'+ section
+        const searchtab = 'searchtab-'+ section
+        const paginatetab = "paginate-" + section
+        category = section.charAt(0).toUpperCase() + section.slice(1);
+        if(category != "Merch") {
+            const listdata = filterData(data.results, category)
+            paginateSection(listdata,paginatetab, parent)
+            createSearch(listdata, searchtab, parent, paginatetab)
+        } else {
+            paginateSection(data.results, paginatetab, parent)
+            createSearch(data.results, searchtab, parent, paginatetab)
+        }
+    }
+    function createSection(data, parent, start , end) {
+        const all = document.getElementById(parent)
+        all.innerHTML = ""
+        const last = Math.min(data.length , end)
+        const child = data.slice(start, last)
+        if(child.length > 0) {
+            child.forEach(merch=> {
+                const mcard = createCard(merch.values)
+                all.append(mcard)
+            })
+        } else {
+            all.innerHTML = "<h3 class='nodata'>No Data Found</h3>"
+        } 
+    }
+     
+    function createCard(data) {
+        const card = document.createElement("div")
+        card.setAttribute("class", "col cardwrapper")
+        card.innerHTML = `
+            <div class="merchcard">
+                <a href="${data.merchant_website_link}">
+                    <img src="${data.merchant_logo.url}" alt="${data.merchant_logo.altText}" >
+                </a>
+            </div>
+        `
+        return card
+    }
+
+    function createSearch(data , parent, listsection, paginatetab) {
+        const searchel = document.getElementById(parent) 
+        const wrapper = document.createElement("div")
+        const button = document.createElement("button")
+        const input = document.createElement("input")
+        wrapper.setAttribute("class", "input-group mb-3 mt-3")
+        button.setAttribute("class", "btn sbtn")
+        input.setAttribute("class", "form-control sinp")
+        input.setAttribute("placeholder", "Search")
+        input.addEventListener("input", (e) => {
+            const sedata = searchData(data, e.target.value)
+            paginateSection(sedata, paginatetab, listsection) 
+        })
+        button.innerHTML =  `
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>`
+        wrapper.append(button, input)
+        searchel.append(wrapper)
+    }
+
+    
+
+
+    const  filterData = (data, category) =>  data.filter(d=> d.values.category.some(c=>c.name === category))
+    const  searchData = (data, search) =>  data.filter(d=> d.values.merchant_name.toLowerCase().includes(search.toLowerCase()))
+
+
+
+    function paginateSection(data, section, listel) {
+        let buttons = []
+        const perpage = Math.ceil(data.length / maxCardLimit)
+        const pagination = document.getElementById(section )
+        pagination.innerHTML = ""
+        for(let i =  1; i <= perpage; i++ ) {
+            const [li, btn] = _createLiButton()
+            btn.innerHTML = i
+            btn.addEventListener("click", ()=> {
+                createSection(data, listel, (i-1)*maxCardLimit, maxCardLimit*i)
+            })
+            li.append(btn)
+            if(perpage > 1 && perpage <= maxPaginatebtn) {
+                pagination.append(li)
+            } 
+            if(perpage > maxPaginatebtn) buttons.push(li)
+            else buttons = []
+            
+        }
+        if(buttons.length !== 0) minimizePaginate(buttons, maxPaginatebtn)
+        createSection(data, listel, 0, maxCardLimit)
+    }
+
+    function _createLiButton(innerHTML) {
+        const li = document.createElement("li")
+        const btn = document.createElement("button")
+        li.setAttribute("class", "page-item" )
+        btn.setAttribute("class", "page-link")
+        if(innerHTML) btn.innerHTML = innerHTML 
+        return [li, btn]
+    }
+
+    
+
+    //addition for minimize pagination
+    function minimizePaginate(btns, limit) {
+        const [liprev, btnprev] = _createLiButton("<span aria-hidden='true'>&laquo;</span>")
+        const [linext, btnnext] = _createLiButton('<span aria-hidden="true">&raquo;</span>')
+        const perbutton = Math.ceil(btns.length / limit)
+        let curr = 1
+        const pagination = document.querySelector(".pagination")
+            pagination.innerHTML = ""
+        btnprev.addEventListener("click", ()=> {
+            if(curr > 1) curr--        
+            _appendListButtonHelper(btns, (curr-1)*limit, limit*curr , {prev: [liprev, btnprev], next: [linext, btnnext]})
+        })
+        btnnext.addEventListener("click", ()=> {
+            if(curr < perbutton) curr++
+            _appendListButtonHelper(btns, (curr-1)*limit, limit*curr , {prev: [liprev, btnprev], next: [linext, btnnext]})
+            
+        })
+        _appendListButtonHelper(btns, curr-1, limit, {prev: [liprev, btnprev], next: [linext, btnnext]})
+    } 
+    
+
+    function _appendListButtonHelper(data, start, end, childs) {
+        const pagination = document.querySelector(".pagination")
+        pagination.innerHTML = ""
+        const last = Math.min(data.length ,end)
+        const currbtns = data.slice( start, last)
+        currbtns.forEach(bt => {
+            pagination.append(bt)
+        })
+        const [linext, btnnext] = childs.next
+        const [liprev, btnprev] = childs.prev
+        linext.append(btnnext)
+        liprev.append(btnprev)
+        pagination.append(linext)
+        pagination.prepend(liprev)
+    }
+ 
+</script>
+</html>

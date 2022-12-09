@@ -1,0 +1,5 @@
+ {
+    "type": ["Senior Officer / Executive", "Young Professional", "Part time", "Internship", "Full time", "Fresh Graduate", "Experienced Professional", "Contractual"],
+    "sector": ["Web Development", "Web Design", "Technology", "Technical","Branch Operations", "Branch Sales", "Marketing", "Cebu", "Ortigas", "North Luzon", "Customer Service", "Pampanga", "Naga", "Ilocos Norte", "Eastwood", "Caloocan", "Calamba", "Account", "National Capital Region", "Makati" ],
+    "skills": ["Audit", "CISA", "IT Audit", "Customer Service"]
+  }

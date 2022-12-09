@@ -1,0 +1,549 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form | Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <div class="row containers">
+        <div class="col-3">
+          <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action active" id="app-form-list" data-bs-toggle="list" href="#app-form" role="tab" aria-controls="app-form">Application Form</a>
+            <a disabled class="list-group-item list-group-item-action" id="pers-info-list" data-bs-toggle="list" href="#pers-info" role="tab" aria-controls="pers-info">Personal Information</a>
+            <a disabled class="list-group-item list-group-item-action" id="resd-info-list" data-bs-toggle="list" href="#resd-info" role="tab" aria-controls="resd-info">Residence Information</a>
+            <a disabled class="list-group-item list-group-item-action" id="incm-info-list" data-bs-toggle="list" href="#incm-info" role="tab" aria-controls="incm-info">Income Information</a>
+            <a disabled class="list-group-item list-group-item-action" id="depd-info-list" data-bs-toggle="list" href="#depd-info" role="tab" aria-controls="depd-info">Dependents Information</a>
+            <a disabled class="list-group-item list-group-item-action" id="char-reff-list" data-bs-toggle="list" href="#char-reff" role="tab" aria-controls="char-reff">Character Reference</a>
+            <a disabled class="list-group-item list-group-item-action" id="rev-sub-list" data-bs-toggle="list" href="#rev-sub" role="tab" aria-controls="rev-sub">Review and Submit</a>
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="app-form" role="tabpanel" aria-labelledby="app-form-list">
+              <form class="row g-3 needs-validation parentform" novalidate data-ancr="pers-info-list" data-anchor="app-form-list">
+                <div class="card">
+                    <div class="card-header">
+                      Application Details
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col">
+                                <label class="form-check-label" for="slct-app-src">Application Source</label>
+                                <select class="form-select" aria-label="Default select example" id="slct-app-src">
+                                    <option selected>Rbank Website</option>
+                                  </select>
+                            </div>
+                            <div class="col">
+                                <label class="form-check-label" for="slct-del-code">MC Details Code:</label>
+                              <select class="form-select" aria-label="Default select example" id="slct-del-code" name="detcode">
+                                <option value="brandnew" selected>Brand New</option>
+                                <option value="secondhand">Second Hand</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label class="form-check-label" for="slct-brand">Brand</label>
+                                <select class="form-select" aria-label="Default select example" id="slct-brand" name="brand">
+                                <option value="honda" selected>Honda</option>
+                                <option value="kawasaki">Kawasaki</option>
+                                <option value="suzuki">Suzuki</option>
+                                <option value="yamaha">Yahama</option>
+                                </select>
+                              </div>
+                        </div>
+                        <div class="row g-3">
+                            <fieldset class="col ">
+                              <legend class="col-form-label ">Type of Application</legend>
+                              <div class="col">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="apptype" id="apptype1" value="First time buying or applying motorcycle" checked>
+                                  <label class="form-check-label" for="apptype1">
+                                    First time buying or applying motorcycle
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="apptype" id="apptype2" value="With fully paid motorcycle account from ">
+                                  <label class="form-check-label" for="apptype2">
+                                    With fully paid motorcycle account from 
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="apptype" id="apptype3" value="With fully paid motorcycle account from another dealer">
+                                  <label class="form-check-label" for="apptype3">
+                                    With fully paid motorcycle account from another dealer
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="apptype" id="apptype4" value="Bought cash motorcycle from ">
+                                  <label class="form-check-label" for="apptype4">
+                                    Bought cash motorcycle from 
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="apptype" id="apptype5" value="With repossessed motorcycle from">
+                                  <label class="form-check-label" for="apptype5">
+                                    With repossessed motorcycle from
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="apptype" id="apptype6" value="With repossessed motorcycle from another dealer">
+                                  <label class="form-check-label" for="apptype6">
+                                      With repossessed motorcycle from another dealer
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="apptype" id="apptype7" value="With existing/active installment account from wheeltek">
+                                  <label class="form-check-label" for="apptype7">
+                                    With existing/active installment account from wheeltek
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="apptype" id="apptype8" value="With existing/active installment account to other dealer">
+                                  <label class="form-check-label" for="apptype8">
+                                    With existing/active installment account to other dealer
+                                  </label>
+                                </div>
+                              </div>
+                            </fieldset>
+                            <fieldset class="col ">
+                              <legend class="col-form-label ">Purpose of Purchasing</legend>
+                              <div class="col">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="purpose" id="purpose1" value="Business Pasenger Side Car" checked>
+                                  <label class="form-check-label" for="purpose1">
+                                    Business Pasenger Side Car
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="purpose" id="purpose2" value="Business Cargo Side Car (Kolong-Kolong)">
+                                  <label class="form-check-label" for="purpose2">
+                                    Business Cargo Side Car (Kolong-Kolong)
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="purpose" id="purpose3" value="Business Parcel Delivery">
+                                  <label class="form-check-label" for="purpose3">
+                                    Business Parcel Delivery
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="purpose" id="purpose4" value="Business Angkas (Habal-Habal)">
+                                  <label class="form-check-label" for="purpose4">
+                                    Business Angkas (Habal-Habal)
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="purpose" id="purpose5" value="Personal Daily Commute">
+                                  <label class="form-check-label" for="purpose5">
+                                    Personal Daily Commute
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="purpose" id="purpose6" value="Racing">
+                                  <label class="form-check-label" for="purpose6">
+                                      Racing
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="purpose" id="purpose7" value="Touring">
+                                  <label class="form-check-label" for="purpose7">
+                                    Touring
+                                  </label>
+                                </div>
+                              </div>
+                            </fieldset>
+                      </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary col-2" >Next</button>
+              </form>
+            </div>
+            <div class="tab-pane fade" id="pers-info" role="tabpanel" aria-labelledby="pers-info-list" >
+              <form class="row g-3 needs-validation parentform" novalidate data-ancr="resd-info-list" data-anchor="pers-info-list">
+                <div class="card">
+                    <div class="card-header">Personal Details</div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col">
+                                <label for="pd-fname" class="form-label">First name</label>
+                                <input type="text" class="form-control" id="pd-fname" name="fname"   required>
+                            </div>
+                            <div class="col">
+                                <label for="pd-mname" class="form-label">Middle name</label>
+                                <input type="text" class="form-control" id="pd-mname" name="mname"  required>
+                            </div>  <div class="col">
+                                <label for="dp-lname" class="form-label">Last name</label>
+                                <input type="text" class="form-control" id="dp-lname" name="lname"  required>
+                            </div>  <div class="col">
+                                <label for="pd-bdate" class="form-label">Birth Day</label>
+                                <input type="date" class="form-control" id="pd-bdate" name="birthday"  required>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col">
+                                <label for="pd-bplace" class="form-label">Birth Place</label>
+                                <input type="text" class="form-control" id="pd-bplace" name="birthplace"  required>
+                            </div>
+                            <div class="col">
+                                <label for="pd-alias" class="form-label">Alias</label>
+                                <input type="text" class="form-control" id="pd-alias" name="alias"  required>
+                            </div>  
+                            <div class="col">
+                                <label for="pd-cvl-stat" class="form-label" >Civil Status:</label>
+                                <select class="form-select" id="pd-cvl-stat" name="civilstatus" >
+                                <option value="Single">Single</option>
+                                <option value="Maried">Maried</option>
+                                </select>
+                              </div>
+                              <div class="col">
+                                <label for="pd-gender" class="form-label">Gender:</label>
+                                <select class="form-select" id="pd-gender" name="gender" >
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col">
+                                <label for="pd-nation" class="form-label">Nationality:</label>
+                                <input type="text" class="form-control" id="pd-nation" name="nationality"  required>
+                            </div>
+                            <div class="col">
+                                <label for="pd-religion" class="form-label">Religion:</label>
+                                <input type="text" class="form-control" id="pd-religion" name="religion"  required>
+                            </div>  <div class="col">
+                                <label for="pd-phone" class="form-label">Contact Number</label>
+                                <input type="tel" class="form-control" id="pd-phone" name="contact"  required>
+                            </div>  <div class="col">
+                                <label for="pd-email" class="form-label">Email Address:</label>
+                                <input type="email" class="form-control" id="pd-email" name="email"  required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary col-2">Next</button>
+              </form>
+            </div>
+            <div class="tab-pane fade" id="resd-info" role="tabpanel" aria-labelledby="resd-info-list">
+              <form class="row g-3 needs-validation parentform" novalidate  data-ancr="incm-info-list" data-anchor="resd-info-list">
+                <div class="card crd-con">
+                    <div class="card-header">
+                      Current Address
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col">
+                                <label for="cai-lot" class="form-label">House No/Lot. Blk:</label>
+                                <input type="text" class="form-control" id="cai-lot" name="currhouse"  required>
+                            </div>
+                            <div class="col">
+                                <label for="cai-str" class="form-label">Street</label>
+                                <input type="text" class="form-control" id="cai-str" name="currstreet"  required>
+                            </div> 
+                             <div class="col">
+                                <label for="cai-subd" class="form-label">Subdivision:</label>
+                                <input type="text" class="form-control" id="cai-subd" name="currsubd"  required>
+                            </div>  
+                            <div class="col">
+                                <label for="cai-brng" class="form-label">Barangay:</label>
+                                <input type="text" class="form-control" id="cai-brng" name="currbrng"  required>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-3">
+                                <label for="cai-prov" class="form-label">Province:</label>
+                                <input type="text" class="form-control" id="cai-prov" name="currprov"  required>
+                            </div>  
+                            <div class="col-3">
+                                <label for="cai-town" class="form-label">Town</label>
+                                <input type="text" class="form-control" id="cai-town" name="currtown"  required>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                <div class="card crd-con">
+                    <div class="card-header">
+                      Permanent Address
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col">
+                                <label for="pai-lot" class="form-label">House No/Lot. Blk:</label>
+                                <input type="text" class="form-control" id="pai-lot" name="permhouse"  required>
+                            </div>
+                            <div class="col">
+                                <label for="pai-str" class="form-label">Street</label>
+                                <input type="text" class="form-control" id="pai-str" name="permstreet"  required>
+                            </div> 
+                             <div class="col">
+                                <label for="pai-subd" class="form-label">Subdivision:</label>
+                                <input type="text" class="form-control" id="pai-subd" name="permsubd"  required>
+                            </div>  
+                            <div class="col">
+                                <label for="pai-brng" class="form-label">Barangay:</label>
+                                <input type="text" class="form-control" id="pai-brng" name="permbrng"  required>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-3">
+                                <label for="pai-prov" class="form-label">Province:</label>
+                                <input type="text" class="form-control" id="pai-prov" name="permprov"  required>
+                            </div>  
+                            <div class="col-3">
+                                <label for="pai-town" class="form-label">Town</label>
+                                <input type="text" class="form-control" id="pai-town" name="permtown"  required>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                <div class="card crd-con">
+                    <div class="card-header">
+                      Provincial Address
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col">
+                                <label for="pri-lot" class="form-label">House No/Lot. Blk:</label>
+                                <input type="text" class="form-control" id="pri-lot" name="provhouse"  required>
+                            </div>
+                            <div class="col">
+                                <label for="pri-str" class="form-label">Street</label>
+                                <input type="text" class="form-control" id="pri-str" name="provstreet"  required>
+                            </div> 
+                             <div class="col">
+                                <label for="pri-subd" class="form-label">Subdivision:</label>
+                                <input type="text" class="form-control" id="pri-subd" name="provsubd" required>
+                            </div>  
+                            <div class="col">
+                                <label for="pri-brng" class="form-label">Barangay:</label>
+                                <input type="text" class="form-control" id="pri-brng" name="provbrng"  required>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-3">
+                                <label for="pri-prov" class="form-label">Province:</label>
+                                <input type="text" class="form-control" id="pri-prov" name="provprov"  required>
+                            </div>  
+                            <div class="col-3">
+                                <label for="pri-town" class="form-label">Town</label>
+                                <input type="text" class="form-control" id="pri-town" name="provtown"  required>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary col-2">Next</button>
+              </form>
+            </div>
+            <div class="tab-pane fade" id="incm-info" role="tabpanel" aria-labelledby="incm-info-list">
+              <form class="row g-3 needs-validation parentform" novalidate data-ancr="depd-info-list" data-anchor="incm-info-list">
+                <div class="card">
+                    <div class="card-header">
+                      Income Details
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-3">
+                                <label for="idi-empl" class="form-label">Type of Employment</label>
+                                <select class="form-select" id="idi-empl" name="employmenttype">
+                                <option value="Govenment">Govenment</option>
+                                <option value="Private">Private</option>
+                                </select>
+                              </div>
+                              <div class="col-3">
+                                <label for="idi-estat" class="form-label">Employment Status</label>
+                                <select class="form-select" id="idi-estat" name="employmentstat">
+                                <option value="Regular">Regular</option>
+                                <option value="Contractual">Contractual</option>
+                                <option value="PartTime">Part Time</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <label for="ici-mplyrs" class="form-label">Employers Name:</label>
+                                <input type="text" class="form-control" id="ici-mplyrs" name="employername"  required>
+                            </div>
+                            <div class="col">
+                                <label for="ici-pos" class="form-label">Position:</label>
+                                <input type="text" class="form-control" id="ici-pos" name="position"  required>
+                            </div> 
+                             <div class="col">
+                                <label for="idi-lngt" class="form-label">Length of Service</label>
+                                <input type="text" class="form-control" id="idi-lngt" name="servicelength" required>
+                            </div>  
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <label for="idi-mplyrsadd" class="form-label">Employers Address:</label>
+                                <input type="text" class="form-control" id="idi-mplyrsadd" name="employeraddress"  required>
+                            </div>
+                            <div class="col">
+                                <label for="idi-cntc" class="form-label">Contact Number:</label>
+                                <input type="number" class="form-control" id="idi-cntc" name="employercontact"  required>
+                            </div> 
+                             <div class="col">
+                                <label for="idi-tel" class="form-label">Telephone No.</label>
+                                <input type="tel" class="form-control" id="idi-tel" name="employertel" required>
+                            </div>  
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-3">
+                                <label for="idi-ginc" class="form-label">Gross Income</label>
+                                <input type="number" class="form-control" id="idi-ginc" name="grossincome"  required>
+                            </div>
+                            <div class="col-3">
+                                <label for="idi-osrc" class="form-label">Other Source:</label>
+                                <input type="text" class="form-control" id="idi-osrc" name="othersource"  required>
+                            </div> 
+                             <div class="col-3">
+                                <label for="idi-expn" class="form-label">Expences:</label>
+                                <input type="text" class="form-control" id="idi-expn" name="expences" required>
+                            </div>  
+                        </div>
+                        
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary col-2">Next</button>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="depd-info" role="tabpanel" aria-labelledby="depd-info-list">
+                <div class="card">
+                    <div class="card-header">
+                        Dependents Details
+                    </div>
+                    <div class="card-body">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Age</th>
+                                <th scope="col">Relation</th>
+                                <th scope="col">School/Occupation/Address</th>
+                                <th scope="col">action</th>
+                              </tr>
+                            </thead>
+                            <tbody id="adddd">
+                            </tbody>
+                          </table>
+                      
+                          <form class="row g-3 needs-validation depform" novalidate>
+                            <div class="col">
+                              <input type="text" class="form-control" id="ddi-name" name="ddi-name" placeholder="Name" required>
+                            </div>
+                            <div class="col">
+                              <input type="number" class="form-control" id="ddi-age" name="ddi-age" placeholder="Age" required>
+                            </div>
+                            <div class="col">
+                              <input type="text" class="form-control" id="ddi-rel" name="ddi-rel" placeholder="Relation" required>
+                            </div>
+                            <div class="col">
+                              <input type="text" class="form-control" id="ddi-soa" name="ddi-soa" placeholder="School/Occupation/Address" required>
+                            </div>
+                            <div class="col-1">
+                              <button class="btn btn-primary"  type="submit">Add</button>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                  <button id="tochar" class="btn btn-primary col-2">Next</button>
+            </div>
+            <div class="tab-pane fade" id="char-reff" role="tabpanel" aria-labelledby="char-reff-list">
+                <div class="card crd-con">
+                    <div class="card-header">
+                        Character Refferences(Relative)
+                    </div>
+                    <div class="card-body">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">First name</th>
+                            <th scope="col">Middle name</th>
+                            <th scope="col">Last name</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">actions</th>
+                          </tr>
+                        </thead>
+                        <tbody id="addcr">
+                        </tbody>
+                      </table>
+                      <br>
+  
+                        <form class="row g-3 needs-validation charform" novalidate>
+                          <div class="col">
+                            <input type="text" class="form-control" id="cri-fname" name="cri-fname" placeholder="First name"  required>
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control" id="cri-mname" name="cri-mname" placeholder="Middle name"  required>
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control" id="cri-lname"  name="cri-lname" placeholder="Last name" required>
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control" id="cri-cntc" name="cri-cntc" placeholder="Contact"  required>
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control" id="cri-addr" name="cri-addr" placeholder="Address" required>
+                          </div>
+                          <div class="col-1">
+                            <button class="btn btn-primary"  type="submit">Add</button>
+                          </div>
+                        </form>
+  
+                    </div>
+                </div>
+                <div class="card crd-con">
+                    <div class="card-header">
+                        Character Refferences(Non-Relative)
+                    </div>
+                    <div class="card-body">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">First name</th>
+                            <th scope="col">Middle name</th>
+                            <th scope="col">Last name</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">actions</th>
+                          </tr>
+                        </thead>
+                        <tbody id="addcrnr">
+                        </tbody>
+                      </table>
+                      <form class="row g-3 needs-validation charnrform" novalidate>
+                        <div class="col">
+                          <input type="text" class="form-control" id="cri-fname-nr" name="cri-fname-nr" placeholder="First name" required>
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" id="cri-mname-nr" name="cri-mname-nr" placeholder="Middle name" required>
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" id="cri-lname-nr" name="cri-lname-nr" placeholder="Last name" required>
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" id="cri-cntc-nr" name="cri-cntc-nr" placeholder="Contact" required>
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" id="cri-addr-nr" name="cri-addr-nr" placeholder="Address" required>
+                        </div>
+                        <div class="col-1">
+                          <button class="btn btn-primary"  type="submit">Add</button>
+                        </div>
+                      </form>
+                    </div>
+                </div>
+                <button id="tofinal" class="btn btn-primary col-2">Next</button>
+            </div>
+            <div class="tab-pane fade" id="rev-sub" role="tabpanel" aria-labelledby="rev-sub-list">...
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
+
